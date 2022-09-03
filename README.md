@@ -1,1 +1,1 @@
-# aspnetcore-site
+ASP.NET Core site for a bakery store.
