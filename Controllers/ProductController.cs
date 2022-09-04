@@ -16,6 +16,7 @@ namespace Bakery.Controllers
 
         public IActionResult List()
         {
+            ViewBag.CurrentCategory = "Cakes"; // The ViewBag is shared between the Controller and the View.
             return View(_productRepository.AllProducts);
         }
     }

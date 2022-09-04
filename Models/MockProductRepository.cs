@@ -2,6 +2,8 @@
 
 public class MockProductRepository : IProductRepository
 {
+    private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
+
     public IEnumerable<Product> AllProducts =>
         new List<Product>
         {
