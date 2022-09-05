@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Bakery.Models;
+using Bakery.ViewModels;
 
 namespace Bakery.Controllers
 {
@@ -16,8 +17,10 @@ namespace Bakery.Controllers
 
         public IActionResult List()
         {
-            ViewBag.CurrentCategory = "Cakes"; // The ViewBag is shared between the Controller and the View.
-            return View(_productRepository.AllProducts);
+            //ViewBag.CurrentCategory = "Cakes"; // The ViewBag is shared between the Controller and the View.
+            //return View(_productRepository.AllProducts);
+            var productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "Cakes");
+            return View(productListViewModel);
         }
     }
 }

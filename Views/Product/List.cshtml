@@ -1,21 +1,12 @@
-﻿@model IEnumerable<Bakery.Models.Pie>
+﻿@model ProductListViewModel
+@* We don't have to write the full namespace because we have a _ViewImports file.*@
 
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Bakery Store</title>
-    </head>
-    <body>
-        <h1>@ViewBag.CurrentCategory</h1>
-        @foreach(var product in Model)
-        {
-            <div>
-                <h2>@product.Name</h2>
-                <h3>@product.Price.ToString("c")</h3>
-                <h4>@product.Category.CategoryName</h4>
-            </div>
-        }
-    </body>
-</html>
+<h1>@Model.CurrentCategory</h1>
+@foreach(var product in Model.Products)
+{
+    <div>
+        <h2>@product.Name</h2>
+        <h3>@product.Price.ToString("c")</h3>
+        <h4>@product.Category.CategoryName</h4>
+    </div>
+}
