@@ -2,11 +2,18 @@
 @* We don't have to write the full namespace because we have a _ViewImports file.*@
 
 <h1>@Model.CurrentCategory</h1>
-@foreach(var product in Model.Products)
-{
-    <div>
-        <h2>@product.Name</h2>
-        <h3>@product.Price.ToString("c")</h3>
-        <h4>@product.Category.CategoryName</h4>
-    </div>
-}
+
+<div class="row row-cols-1 g-4">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col col-md-6 col-lg-4">
+            <div class="card h-100"> @*h-100 makes cards the same height*@
+                <img src="@product.ImageThumbnailUrl" class="card-img-top" alt="@product.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <a href="#" class="btn btn-primary stretched-link">@product.Price.ToString("c")</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

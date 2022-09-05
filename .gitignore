@@ -1,5 +1,7 @@
 # Custom
 README.md
+*.xcf
+wwwroot/lib/*
 
 # User-specific files
 *.suo
