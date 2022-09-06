@@ -2,7 +2,7 @@
 
 public class Product
 {
-    public int ProductId { get; set; }
+    public int Id { get; set; }
     public string Name { get; set; } = string.Empty; // Mandatory
     public string? ShortDescription { get; set; }
     public string? LongDescription { get; set; }
