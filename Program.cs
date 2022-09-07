@@ -24,4 +24,6 @@ if (app.Environment.IsDevelopment())
 
 app.MapDefaultControllerRoute();
 
+DataSeeder.Seed(app);
+
 app.Run();

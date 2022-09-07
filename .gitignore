@@ -3,6 +3,7 @@ README.md
 *.xcf
 wwwroot/lib/*
 appsettings.json
+appsettings.Development.json
 Migrations
 
 # User-specific files
