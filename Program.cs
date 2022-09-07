@@ -7,7 +7,7 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>(); // Add re
 builder.Services.AddScoped<IProductRepository, ProductRepository>(); // AddScoped creates a singleton per request.
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<BakeryDbContext>(options =>
+builder.Services.AddDbContext<MyDbContext>(options =>
     {
         options.UseSqlServer(builder.Configuration["ConnectionStrings:BakeryDbContext"]);
     }
@@ -23,7 +23,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapDefaultControllerRoute();
-
-DataSeeder.Seed(app);
 
 app.Run();

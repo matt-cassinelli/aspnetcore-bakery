@@ -3,13 +3,13 @@ namespace Bakery.Models;
 
 public class CategoryRepository : ICategoryRepository
 {
-    private readonly BakeryDbContext _context;
+    private readonly MyDbContext _context;
 
-    public CategoryRepository(BakeryDbContext context)
+    public CategoryRepository(MyDbContext context)
     {
         _context = context; // Constructor injection.
     }
 
     public IEnumerable<Category> AllCategories =>
-        _context.Categories.OrderBy(c => c.CategoryName);
+        _context.Categories.OrderBy(c => c.Name);
 }
