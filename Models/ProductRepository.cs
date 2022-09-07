@@ -7,7 +7,7 @@ public class ProductRepository : IProductRepository
 
     public ProductRepository(MyDbContext context)
     {
-        _context = context; // Construction injection.
+        _context = context;
     }
 
     public IEnumerable<Product> AllProducts

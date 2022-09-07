@@ -19,8 +19,15 @@ namespace Bakery.Controllers
         {
             //ViewBag.CurrentCategory = "Cakes"; // The ViewBag is shared between the Controller and the View.
             //return View(_productRepository.AllProducts);
-            var productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "Cakes");
+            var productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "All Products");
             return View(productListViewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var product = _productRepository.GetProductById(id);
+            if (product == null) { return NotFound(); }
+            return View(product);
         }
     }
 }

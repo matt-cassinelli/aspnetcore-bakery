@@ -22,6 +22,11 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.MapDefaultControllerRoute();
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}"
+//);
+
+app.MapDefaultControllerRoute(); // Configure all routes like host.com/controller/action/params
 
 app.Run();
