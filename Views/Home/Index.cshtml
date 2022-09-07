@@ -30,25 +30,6 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach (var product in Model.ProductsOfTheWeek)
     {
-        <div class="col">
-            <div class="card">
-                <img src="@product.ImageThumbnailUrl" class="card-img-top" alt="@product.Name">
-                <div class="card-body">
-                    <h4 class="d-grid">
-                    </h4>
-
-                    <div class="d-flex justify-content-between mt-2">
-                        <h2 class="text-start">
-                            <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="">@product.Name</a>
-                        </h2>
-                        <h5 class="text-nowrap">
-                            @product.Price.ToString("c")
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <partial name="_PieCard" model="product"/>
     }
 </div>
-
-@* TODO: Reduce code repetition - here & list view *@
