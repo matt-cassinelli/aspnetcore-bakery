@@ -1,11 +1,11 @@
 ﻿@model ProductListViewModel
-@* We don't have to write the full namespace because we have a _ViewImports file.*@
+@* We don't have to write the full namespace thanks to the _ViewImports file.*@
 
 <h1>@Model.CurrentCategory</h1>
 
 <div class="row row-cols-1 g-4">
     @foreach (var product in Model.Products)
     {
-        <partial name="_PieCard" model="product"/>
+        <partial name="_ProductCard" model="product"/>
     }
 </div>

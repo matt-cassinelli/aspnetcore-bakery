@@ -3,8 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>(); // Add repositories to DI container.
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>(); // Add stuff to DI container for use throughout the app.
 builder.Services.AddScoped<IProductRepository, ProductRepository>(); // AddScoped creates a singleton per request.
+
+builder.Services.AddScoped<IBasket, Basket>(sp => Basket.GetBasket(sp));
+builder.Services.AddSession();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MyDbContext>(options =>
@@ -16,6 +20,8 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+app.UseSession();
 
 if (app.Environment.IsDevelopment())
 {
