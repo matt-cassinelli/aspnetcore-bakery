@@ -76,21 +76,13 @@ public class Basket : IBasket
         _context.SaveChanges();
     }
 
-    public List<BasketItem> GetItems() // TODO: Can we move this to the Items property getter instead? Where is it used?
+    public List<BasketItem> GetItems() // TODO: Make this private? Where is it used?
     {
-        // Original
-        //return Items ??= _context.BasketItems
-        //    .Where(c => c.BasketId == Id)
-        //    .Include(s => s.Product)
-        //    .ToList();
-
-        //if (Items == null)
-        //{
         Items = _context.BasketItems
             .Where(c => c.BasketId == Id)
             .Include(s => s.Product)
             .ToList();
-        //}
+
         return Items;
     }
 
@@ -108,7 +100,9 @@ public class Basket : IBasket
     {
         var total = _context.BasketItems
             .Where(c => c.BasketId == Id)
-            .Select(c => c.Product.Price * c.Amount).Sum();
+            .Select(c => c.Product.Price * c.Amount)
+            .Sum();
+
         return total;
     }
 }

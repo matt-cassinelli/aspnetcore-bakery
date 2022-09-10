@@ -1,0 +1,16 @@
+﻿@model BasketViewModel
+
+@if(Model.Basket.Items.Count > 0)
+{ @*Draw icon*@
+    <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link">
+                @*<img src="images/basket.svg" alt="Basket" width="20"/>*@
+                <object type="image/svg+xml" data="images/basket.svg" style="fill:"> </object>
+                <span>
+                    @Model.Basket.Items.Count
+                </span>
+            </a>
+        </li>
+    </ul>
+}
