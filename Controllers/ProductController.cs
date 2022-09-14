@@ -15,12 +15,29 @@ namespace Bakery.Controllers
             _categoryRepository = categoryRepository; //
         }
 
-        public IActionResult List()
+        public ViewResult List(string category) // Move this to repository?
         {
+            IEnumerable<Product> products;
+            string? currentCategory;
+
+            if (string.IsNullOrEmpty(category))
+            {
+                products = _productRepository.AllProducts.OrderBy(p => p.Id);
+                currentCategory = "All pies";
+            }
+            else
+            {
+                products = _productRepository.AllProducts
+                    .Where(p => p.Category.Name == category)
+                    .OrderBy(p => p.Id);
+                currentCategory = _categoryRepository.AllCategories
+                    .FirstOrDefault(c => c.Name == category)?.Name;
+            }
+
             //ViewBag.CurrentCategory = "Cakes"; // The ViewBag is shared between the Controller and the View.
             //return View(_productRepository.AllProducts);
-            var productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "All Products");
-            return View(productListViewModel);
+            //return View(new ProductListViewModel(_productRepository.AllProducts, "All Products"));
+            return View(new ProductListViewModel(products, currentCategory));
         }
 
         public IActionResult Details(int id)

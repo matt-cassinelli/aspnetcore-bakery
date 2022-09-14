@@ -3,3 +3,9 @@
     height: 25vw;
     object-fit: cover;
 }
+
+.logo-centre {
+    position: relative;
+    top: -4rem;
+    margin-bottom: -4rem;
+}

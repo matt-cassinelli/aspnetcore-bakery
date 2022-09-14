@@ -1,4 +1,6 @@
-﻿using Bakery.Models;
+﻿// View Components are like partial views but can work with more data than just the Model.
+
+using Bakery.Models;
 using Bakery.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 namespace Bakery.Components;
@@ -11,7 +13,7 @@ public class BasketSummary : ViewComponent
         _basket = basket; // Provide access to Basket through DI
     }
 
-    public IViewComponentResult Invoke() // When a view component is rendered, the Invoke() method gets called.
+    public IViewComponentResult Invoke() // The Invoke() method gets called when the view component is rendered.
     {
         _basket.Items = _basket.GetItems(); // TODO: Should this be done inside the Basket class?
         var basketViewModel = new BasketViewModel(_basket, _basket.GetTotal());

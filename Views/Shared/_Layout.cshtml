@@ -25,15 +25,15 @@
 
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2">
-                        <li class="nav-item">
+                       @*<li class="nav-item">
                             <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a asp-controller="Product" asp-action="List" class="nav-link">Products</a>
-                        </li>
+                        </li>*@
+                        <vc:category-menu></vc:category-menu>
                     </ul>
-
-                    <vc:basket-summary></vc:basket-summary> @*View component - like a partial view but can do more. Reads from 'Components' folders.*@
+                    <vc:basket-summary></vc:basket-summary> @*A view component is like a partial view but more powerful. Reads from 'Components' folders.*@
                 </div>
             </nav>
         </header>
