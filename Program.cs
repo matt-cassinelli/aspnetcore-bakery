@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>(); // Add stuff to DI container for use throughout the app.
-builder.Services.AddScoped<IProductRepository, ProductRepository>(); // AddScoped creates a singleton per request.
+builder.Services.AddScoped<IProductRepository, ProductRepository>();   // AddScoped creates a singleton per request.
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 builder.Services.AddScoped<IBasket, Basket>(sp => Basket.GetBasket(sp));
 builder.Services.AddSession();

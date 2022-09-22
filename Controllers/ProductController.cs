@@ -15,7 +15,7 @@ namespace Bakery.Controllers
             _categoryRepository = categoryRepository; //
         }
 
-        public ViewResult List(string category) // Move this to repository?
+        public ViewResult List(string category) // This should be moved to an application service.
         {
             IEnumerable<Product> products;
             string? currentCategory;
@@ -23,7 +23,7 @@ namespace Bakery.Controllers
             if (string.IsNullOrEmpty(category))
             {
                 products = _productRepository.AllProducts.OrderBy(p => p.Id);
-                currentCategory = "All pies";
+                currentCategory = "All products";
             }
             else
             {

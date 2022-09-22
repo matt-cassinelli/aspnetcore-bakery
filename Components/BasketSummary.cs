@@ -1,4 +1,4 @@
-﻿// View Components are like partial views but can work with more data than just the Model.
+﻿// View Components are like partial views but aren't limited to using data from only the Model.
 
 using Bakery.Models;
 using Bakery.ViewModels;

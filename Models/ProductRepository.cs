@@ -30,4 +30,6 @@ public class ProductRepository : IProductRepository
     {
         return _context.Products.FirstOrDefault(p => p.Id == id);
     }
+
+    // GetProductByCCategory
 }

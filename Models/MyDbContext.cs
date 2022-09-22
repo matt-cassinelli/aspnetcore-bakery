@@ -10,6 +10,8 @@ public class MyDbContext : DbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<BasketItem> BasketItems { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderLine> OrdersLine { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
