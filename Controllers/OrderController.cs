@@ -14,8 +14,36 @@ public class OrderController : Controller
         _basket = basket;                   // Inject the dependencies we need.
     }
 
+    [HttpGet]
     public IActionResult Checkout()
     {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Checkout(Order order)
+    {
+        var items = _basket.GetItems();
+        _basket.Items = items; // Put this in GetItems?
+
+        if (_basket.Items.Count == 0)
+        {
+            ModelState.AddModelError("", "Your cart is empty, add some products first");
+        }
+
+        if (ModelState.IsValid)
+        {
+            _orderRepository.CreateOrder(order);
+            _basket.Clear();
+            return RedirectToAction("CheckoutComplete");
+        }
+
+        return View(order); // If not valid, return the same view, passing in their order object
+    }
+
+    public IActionResult CheckoutComplete()
+    {
+        ViewBag.CheckoutCompleteMessage = "Thanks for your order. Enjoy!";
         return View();
     }
 }
