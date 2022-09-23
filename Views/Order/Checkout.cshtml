@@ -5,51 +5,62 @@
         You're just one step away...
     </h3>
 
+    @* <div asp-validation-summary="All" class="text-danger"></div> *@
+
     <div class="col-6">
 
         <div class="col-12">
-            <label asp-for="FirstName" class="form-label">First name</label> @* The inbuilt asp-for tag helper points to the FirstName property on our Order model *@
+            <label asp-for="FirstName" class="form-label"></label> @* The inbuilt asp-for tag helper points to the FirstName property on our Order model *@
             <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
         </div>
 
         <div class="col-12">
-            <label asp-for="LastName" class="form-label">Last name</label>
+            <label asp-for="LastName" class="form-label"></label>
             <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
         </div>
             
         <div class="col-12">
-            <label asp-for="AddressLine1" class="form-label">Address line 1</label>
+            <label asp-for="AddressLine1" class="form-label"></label>
             <input asp-for="AddressLine1" class="form-control"/>
+            <span asp-validation-for="AddressLine1" class="text-danger"></span>
         </div>
             
         <div class="col-12">
-            <label asp-for="AddressLine2" class="form-label">Address line 2</label>
+            <label asp-for="AddressLine2" class="form-label"></label>
             <input asp-for="AddressLine2" class="form-control" />
+            <span asp-validation-for="AddressLine2" class="text-danger"></span>
         </div>
             
         <div class="col-6">
-            <label asp-for="Town" class="form-label">Town / city</label>
+            <label asp-for="Town" class="form-label"></label>
             <input asp-for="Town" class="form-control" />
+            <span asp-validation-for="Town" class="text-danger"></span>
         </div>
             
         <div class="col-6">
             <label asp-for="Postcode" class="form-label"></label>
             <input asp-for="Postcode" class="form-control" />
+            <span asp-validation-for="Postcode" class="text-danger"></span>
         </div>
             
         <div class="col-6">
-            <label asp-for="Country" class="form-label">Country</label> @* Make dropdown *@
+            <label asp-for="Country" class="form-label"></label> @* Make dropdown *@
             <input asp-for="Country" class="form-control" />
+            <span asp-validation-for="Country" class="text-danger"></span>
         </div>
             
         <div class="col-12">
             <label asp-for="Email" class="form-label"></label>
             <input asp-for="Email" class="form-control"/>
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
             
         <div class="col-12">
-            <label asp-for="PhoneNumber" class="form-label">Phone number</label>
+            <label asp-for="PhoneNumber" class="form-label"></label>
             <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
 
         <div class="mt-2">
@@ -60,8 +71,3 @@
 
     </div>
 </form>
-
-
-
-
-
