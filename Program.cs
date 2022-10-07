@@ -12,6 +12,7 @@ builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddDbContext<MyDbContext>(options =>
     {
         options.UseSqlServer(builder.Configuration["ConnectionStrings:BakeryDbContext"]);
@@ -35,5 +36,7 @@ if (app.Environment.IsDevelopment())
 //);
 
 app.MapDefaultControllerRoute(); // Configure all routes like host.com/controller/action/params
+
+app.MapRazorPages(); // Register files under the Pages folder as endpoints
 
 app.Run();
