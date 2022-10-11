@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bakery", "Bakery.csproj", "{BB848F8F-A600-4BDA-B1B0-58DBD2F8C7B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bakery", "src\Bakery.csproj", "{BB848F8F-A600-4BDA-B1B0-58DBD2F8C7B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BakeryTests", "tests\BakeryTests.csproj", "{F189DDBC-7385-4A15-8C35-60640C15E360}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{10B929E3-DDA8-46E1-BD66-84CD4E217D22}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,10 @@ Global
 		{BB848F8F-A600-4BDA-B1B0-58DBD2F8C7B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB848F8F-A600-4BDA-B1B0-58DBD2F8C7B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB848F8F-A600-4BDA-B1B0-58DBD2F8C7B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F189DDBC-7385-4A15-8C35-60640C15E360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F189DDBC-7385-4A15-8C35-60640C15E360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F189DDBC-7385-4A15-8C35-60640C15E360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F189DDBC-7385-4A15-8C35-60640C15E360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

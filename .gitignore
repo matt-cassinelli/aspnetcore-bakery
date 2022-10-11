@@ -1,10 +1,11 @@
 # Custom
 README.md
 *.xcf
-wwwroot/lib/*
+src/wwwroot/lib/*
 appsettings.json
 appsettings.Development.json
 Migrations
+*.csproj.user
 
 # User-specific files
 *.suo
